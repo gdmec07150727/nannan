@@ -1,0 +1,57 @@
+<wxs module="tools" src="../../pages/my/my.wxs"></wxs>
+<view class="con">
+    <view class="head">
+        <view class="card">
+                <image class="img_user" src="{{avatarUrl}}" mode="cover"></image>
+                <text class="name_user">{{nickName}}</text>
+                <text class="show">1 关注 | 0 被关注</text>
+                <text class="show"></text>
+        </view>
+        <button open-type="share" class="share">分享名片</button>
+    </view>
+    <view class="zhong">
+        <view class="first" bindtap="">
+            <image style="width:70rpx;height: 70rpx;" src="/images/info.png"></image>
+            <text>我的消息</text>
+        </view>
+        <view class="first" bindtap="">
+            <image style="width:70rpx;height: 70rpx;" src="/images/my_info.png"></image>
+            <text>个人信息</text>
+        </view>
+        <view class="first" bindtap="">
+            <image style="width:70rpx;height: 70rpx;" src="/images/setting.png"></image>
+            <text>设置&关于</text>
+        </view>
+    </view>
+    <view class="content">
+        <view class="con_head">
+            <image style="width: 58rpx;height: 58rpx;" src="/images/notes.png"></image>
+            <text>我的发表记录</text>
+        </view>
+        <text class="jilu">(共{{article.length}}条)</text>
+        <!--发表内容-->
+        <view class="con_nei" wx:for="{{article}}">
+            <view class="left">
+                <text>{{tools.sub(item.data)}}</text>
+                <text>{{tools.subb(item.data)}}</text>
+            </view>
+            <view class="right">
+                <view class="labe">
+                    <image style="width: 40rpx;height: 40rpx;" src="/images/label.png"></image>
+                    <text style="font-weight: 600;color: #8B4500;">{{item.catename}}</text>
+                </view>
+                <text>{{item.content}}
+                </text>
+                <image src="{{item.pic}}"></image>
+                <view class="opera">
+                    <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
+                    <text>{{item.zan}}</text>
+                    <image style="width: 36rpx;height: 36rpx;" src="/images/comment1.png"></image>
+                    <text>{{item.comment}}</text>
+                </view>
+            </view>
+        </view>
+        
+
+    </view>
+</view>

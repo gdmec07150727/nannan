@@ -1,0 +1,54 @@
+.con{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    width: 95%;
+    text-align: center;
+    font-family: SimHei;
+    font-size: 38rpx;
+    font-weight: 700;
+    margin-top: 15rpx;
+}
+
+.from{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20rpx;
+}
+.from text{
+    font-size: 26rpx;
+    color: darkgray;
+}
+
+.content{
+    width: 96%;
+    margin-top: 15rpx;
+    font-size: 30rpx;
+    line-height: 55rpx;
+}
+.img{
+    width: 680rpx;
+    height: 400rpx;
+    border-radius: 20rpx;
+    margin-top: 15rpx;
+}
+.btn{
+    font-size: 30rpx;
+    background: #63B8FF;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 0;
+    border:none;
+}

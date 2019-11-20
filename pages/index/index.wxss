@@ -1,0 +1,71 @@
+.con{
+  width:100%;
+  height: 100%;
+  background-color: #EBEBEB;
+}
+/*修改轮播图面板指示点*/
+.swiper-box .wx-swiper-dot{
+    width:12rpx;
+    display: inline-flex;
+    height: 12rpx;
+    margin-left: 10rpx;
+    justify-content:space-between;
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 2; 
+    background: rgba(255,255,255,0.8);
+    opacity:0.3;
+    border-radius: 8rpx
+}
+.swiper-box .wx-swiper-dot.wx-swiper-dot-active{
+    width: 45rpx;
+    border-radius: 100rpx;
+    height: 10rpx;
+}
+.swiper-box .wx-swiper-dot-active::before{
+    background:rgba(255,255,255,0.8);   
+}
+.news{
+    width: 100%;
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+.news_top{
+    width: 100%;
+    height: 80rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.news_top text{
+    margin-left: 20rpx;
+    font-family: SimHei;
+    font-size: 30rpx;
+}
+.news_cont{
+    width: 100%;
+    height: 200rpx;
+    background-color: white;
+    margin-top: 5rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.tex{
+    width: 470rpx;
+    height: 200rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.news_cont text{
+    
+    font-size: 30rpx;
+    font-family: SimHei;
+    line-height: 45rpx;
+}

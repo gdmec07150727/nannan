@@ -1,0 +1,14 @@
+<view class="zhong">
+    <view class="first" bindtap="">
+        <image style="width:80rpx;height: 80rpx;" src="/images/map.png"></image>
+        <text>南苑导览</text>
+    </view>
+    <view class="first" bindtap="">
+        <image style="width:80rpx;height: 80rpx;" src="/images/rili.png"></image>
+        <text>南苑校历</text>
+    </view>
+    <view class="first" bindtap="">
+        <image style="width:80rpx;height: 80rpx;" src="/images/vieww.png"></image>
+        <text>南苑风采</text>
+    </view>
+</view>

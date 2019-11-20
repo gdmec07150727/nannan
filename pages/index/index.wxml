@@ -1,0 +1,17 @@
+<view class="con">
+  <swip class="swiper-box"></swip>
+  <first2></first2>
+  <view class="news">
+    <view class="news_top">
+      <image src="/images/gong.png" style="width: 50rpx;height: 50rpx;"></image>
+      <text>新闻&公告</text>
+    </view>
+    <view class="news_cont" bindtap="news" wx:for="{{news}}" data-id="{{item.id}}">
+      <image src="{{item.pic}}" style="width: 220rpx;height: 150rpx;"></image>
+      <view class="tex">
+        <text>{{item.title}}</text>
+        <text style="font-size: 26rpx;color:rgb(109, 109, 109);font-family: Microsoft YaHei;">{{item.time}}</text>
+      </view>
+    </view>
+  </view>
+</view>

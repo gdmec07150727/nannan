@@ -1,0 +1,13 @@
+<view class="con">
+    <text class="title">{{detail.title}}</text>
+    <view class="from">
+        <text class="author">来源：{{detail.author}}</text>
+        <text class="data">日期：{{detail.time}}</text>
+    </view>
+    <text class="content">
+        {{detail.content}}
+    </text>
+    <image class="img" src="{{detail.pic}}"></image>
+    <view style="height: 100rpx;"></view>
+    <button open-type="share" class="btn">点击分享文章</button>
+</view>

@@ -1,0 +1,202 @@
+.con{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.tab{
+    width: 100%; 
+    height:100%;
+    border:2rpxsolid #cccccc; 
+  }
+  
+  .tab .btns{ 
+    height: 90rpx; 
+    background: #eeeeee;
+    display: flex;
+    opacity: 0.8;
+  }
+  
+  .btns{
+    color: black;
+    font-size: 32rpx;
+    display: flex;
+    flex-direction: row;
+  
+  }
+  
+  .tab .btns view{
+    flex: 1; 
+    text-align: center; 
+    line-height:90rpx;
+  }
+  
+  .tab .btns .cur{
+    background: #ffffff;
+    color: #63B8FF;
+  }
+  
+  .Line{
+    width: 50%;
+    height: 5rpx;
+    background:#63B8FF;
+    float: left;
+  }
+  .Line2{
+    width: 50%;
+    height: 5rpx;
+    background:#63B8FF;
+    float: right;
+  }
+  .nannan{
+    width: 100%;
+    margin-top: 4rpx;
+  }
+  .square{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+  }
+
+/*标签样式begin*/
+   .tab-nav{
+    height: 180rpx;
+    background: #fff;
+    border-bottom: 0.5rpx dotted #ddd;
+    display: flex;
+    line-height: 79rpx;
+    position: relative;
+   }
+   
+   .imgg{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+     
+   .tab-line{
+    position: absolute;
+    left: 55rpx;
+    bottom: 30rpx;
+    height: 5rpx;
+    background: white;
+    transition: all 0.3s;
+    border-radius: 20rpx;
+   }
+   
+   .biao{
+     width: 95%;
+     height: 80%;
+     background-size: 100%;
+     border-radius: 20rpx;
+     filter:blur(0.1px)
+   }
+   .biao text{
+     color: white;
+     font-size: 28rpx;
+     line-height: 200rpx;
+   }
+/*标签样式end*/
+
+.article{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.left{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.left image{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+}
+.right{
+  width: 76%;
+  display: flex;
+  flex-direction: column;
+}
+.hea{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  justify-content: space-around;
+}
+.author{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: Microsoft YaHei;
+  font-size: 30rpx;
+}
+.guanzhu{
+  width: 25%;
+  height: 50rpx;
+  border: solid;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  margin-top: 25rpx;
+  margin-right: 12rpx;
+  border-radius: 50rpx;
+  color: #E19E9E;
+}
+.labe{
+  width: 200rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color:#CFCFCF ;
+  border-radius: 200rpx;
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 15rpx;
+}
+.labe text{
+  line-height: 50rpx;
+  margin-left: -16rpx;
+  font-size: 28rpx;
+}
+.labe image{
+  margin-top: -2rpx;
+}
+.conte{
+  width: 95%;
+  margin-top: 15rpx;
+  font-family: SimSun;
+  font-size: 29rpx;
+  line-height: 48rpx;
+  font-weight: 700;
+  color: #525252;
+}
+.dibu{
+  width: 100%;
+  height: 30rpx;
+}
+.opera{
+  width: 200rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 15rpx;
+}
+.opera text{
+    font-family: SimSun;
+    font-size: 28rpx;
+    color: #525252;
+    font-weight: 700;
+    line-height: 40rpx;
+}

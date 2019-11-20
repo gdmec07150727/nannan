@@ -1,0 +1,6 @@
+
+<swiper class="swiper-box" style="width:100%;height:400rpx;" indicator-active-color="white" indicator-dots="true">
+  <swiper-item class="img" wx:for="{{imga}}" wx:key="key">
+    <image style="width:100%;height:100%" src="{{item.imgPath}}"></image>
+  </swiper-item>
+</swiper>

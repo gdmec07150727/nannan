@@ -1,0 +1,47 @@
+var sub = function(val) 
+{ 
+    if (val.length == 0 || val == undefined) 
+    { 
+        return; 
+    } 
+    if (val.length > 5) 
+    { 
+        return val.substring(0, 4); 
+    } else 
+    { 
+        return val; 
+    }
+}
+module.exports.sub = sub;
+
+var subb = function(val) 
+{ 
+    if (val.length == 0 || val == undefined) 
+    { 
+        return; 
+    } 
+    if (val.length > 5) 
+    { 
+        return val.substring(5, 11); 
+    } else 
+    { 
+        return val; 
+    }
+}
+module.exports.subb = subb;
+
+var subbb = function(val) 
+{ 
+    if (val.length == 0 || val == undefined) 
+    { 
+        return; 
+    } 
+    if (val.length > 5) 
+    { 
+        return val.substring(0, 11); 
+    } else 
+    { 
+        return val; 
+    }
+}
+module.exports.subbb = subbb;

@@ -1,0 +1,71 @@
+<wxs module="tools" src="../../pages/my/my.wxs"></wxs>
+<view class="con">
+    <!--头部tab切换-->
+    <view class="tab">
+        <view class="btns">
+         <view wx:for="{{btns}}" class="{{index==active?'cur':''}}" data-index="{{index}}" bindtap="toggle">{{item}}</view>
+        </view>
+        <!--分割线-->
+        <view class="Line" hidden='{{active!=0}}'></view>
+        <view class="Line2" hidden='{{active!=1}}'></view>
+    </view>
+
+    <!--南南广场展示内容-->
+    <view class="nannan square" hidden='{{active!=0}}'>
+        <!--标签-->
+        <scroll-view scroll-x="true" style="width: 100%;white-space:nowrap;">
+            <!-- tab -->
+             <view class="tab-nav" style='font-size:12px'>
+               <view class="imgg" wx:for="{{cate}}" wx:key wx:if="{{index<4}}"  bindtap="setTab" data-tabindex="{{index}}" style="min-width:{{150/tabnum}}%;max-width:20%;text-align:center;height: 180rpx;{{index>4?'border-bottom: 1rpx dotted #ddd;':''}}">
+                 <view class="biao" style="margin-right:25rpx;background-image:url('{{item.image}}');">
+                     <text>{{item.catename}}</text>
+                 </view>
+               </view>
+               <!--下横线-->
+               <view class="tab-line" style="width:20%;transform:translateX({{185*showtab}}%);"></view>
+             </view>
+        </scroll-view>
+
+        <!--标签的内容-->
+                <view class="biao_nei" hidden='{{showtab!=cateid}}' wx:for="{{article}}">
+                    <view class="article">
+                        <view class="left">
+                            <image src="{{item.picture}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="hea">
+                                <view class="author">
+                                    <text>{{item.username}}</text>
+                                    <text style="font-size: 24rpx;color: darkgrey;font-weight: 600;">{{tools.subbb(item.data)}}</text>
+                                </view>
+                                <view class="guanzhu">
+                                    <text>关注</text>
+                                </view>
+                            </view>
+                            <view class="labe">
+                                <image style="width: 40rpx;height: 40rpx;" src="/images/label.png"></image>
+                                <text style="font-weight: 600;color: #8B4500;">{{item.catename}}</text>
+                            </view>
+                            <text  class="conte">{{item.content}}</text>
+                            <image style="width: 96%;height: 350rpx;margin-top: 25rpx;margin-left: 2%;border-radius: 20rpx;" src="{{item.pic}}"></image>
+                            <view class="opera">
+                                <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
+                                <text>{{item.zan}}</text>
+                                <image style="width: 36rpx;height: 36rpx;" src="/images/comment1.png"></image>
+                                <text>{{item.comment}}</text>
+                            </view>
+                            <view class="dibu"></view>
+                        </view>
+                    </view>
+                </view>
+
+    </view>
+
+    <!--我的关注展示内容-->
+    <view class="nannan follow" hidden='{{active!=1}}'>
+        <text>我是css课程</text>
+    </view> 
+
+
+
+</view>
