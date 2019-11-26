@@ -4,7 +4,7 @@
         <view class="card">
                 <image class="img_user" src="{{avatarUrl}}" mode="cover"></image>
                 <text class="name_user">{{nickName}}</text>
-                <text class="show">1 关注 | 0 被关注</text>
+                <text class="show">{{follow_num}} 关注 | {{follow_pass}} 被关注</text>
                 <text class="show"></text>
         </view>
         <button open-type="share" class="share">分享名片</button>
@@ -14,7 +14,7 @@
             <image style="width:70rpx;height: 70rpx;" src="/images/info.png"></image>
             <text>我的消息</text>
         </view>
-        <view class="first" bindtap="">
+        <view class="first" bindtap="user_xin">
             <image style="width:70rpx;height: 70rpx;" src="/images/my_info.png"></image>
             <text>个人信息</text>
         </view>

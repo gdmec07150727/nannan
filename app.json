@@ -1,10 +1,12 @@
 {
-  "pages": [  
+  "pages": [
     
-    "pages/square/square",
-    "pages/index/index",
     "pages/my/my",
+    "pages/pesonal/pesonal",
+    "pages/index/index",
+    "pages/square/square",
     "pages/news_detail/news_detail",
+    
     "pages/logs/logs"
     
   ],

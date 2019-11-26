@@ -43,7 +43,7 @@
                                 </view>
                             </view>
                             <view class="labe">
-                                <image style="width: 40rpx;height: 40rpx;" src="/images/label.png"></image>
+                                <image style="width: 30rpx;height: 30rpx;" src="/images/label.png"></image>
                                 <text style="font-weight: 600;color: #8B4500;">{{item.catename}}</text>
                             </view>
                             <text  class="conte">{{item.content}}</text>
@@ -63,7 +63,37 @@
 
     <!--我的关注展示内容-->
     <view class="nannan follow" hidden='{{active!=1}}'>
-        <text>我是css课程</text>
+        <view class="biao_nei" wx:for="{{guanzhu}}">
+            <view class="article">
+                <view class="left">
+                    <image src="{{item.picture}}"></image>
+                </view>
+                <view class="right">
+                    <view class="hea">
+                        <view class="author">
+                            <text>{{item.username}}</text>
+                            <text style="font-size: 24rpx;color: darkgrey;font-weight: 600;">{{tools.subbb(item.data)}}</text>
+                        </view>
+                        <view class="yiguanzhu" style="width: 18%;height: 40rpx;">
+                            <text></text>
+                        </view>
+                    </view>
+                    <view class="labe">
+                        <image style="width: 30rpx;height: 30rpx;" src="/images/label.png"></image>
+                        <text style="font-weight: 600;color: #8B4500;">{{item.catename}}</text>
+                    </view>
+                    <text  class="conte">{{item.content}}</text>
+                    <image style="width: 96%;height: 350rpx;margin-top: 25rpx;margin-left: 2%;border-radius: 20rpx;" src="{{item.pic}}"></image>
+                    <view class="opera">
+                        <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
+                        <text>{{item.zan}}</text>
+                        <image style="width: 36rpx;height: 36rpx;" src="/images/comment1.png"></image>
+                        <text>{{item.comment}}</text>
+                    </view>
+                    <view class="dibu"></view>
+                </view>
+            </view>
+        </view>
     </view> 
 
 

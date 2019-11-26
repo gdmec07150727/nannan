@@ -22,7 +22,7 @@ Page({
       }
     ],
     cateid:0,
-
+    nickName:'',
   },
   onLoad: function () {
     var that = this;
@@ -54,6 +54,34 @@ Page({
       fail:function(){
       },
       complete:function(){
+      }
+    }),
+    wx.getUserInfo({
+      success: function(res){
+        that.data.nickName = res.userInfo.nickName
+        wx.request({
+          url: 'http://127.0.0.1/nannan/public/follow',
+          header: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+          },
+           data: {
+            username : that.data.nickName,
+          },
+          method: 'GET', 
+          success: function(ress){
+            that.setData({
+              guanzhu:ress.data
+            })
+          },
+          fail: function() {
+          },
+          complete: function() {
+          }
+        })
+      },
+      fail: function() {
+      },
+      complete: function() {
       }
     })
   },
