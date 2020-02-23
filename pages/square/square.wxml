@@ -16,7 +16,7 @@
         <scroll-view scroll-x="true" style="width: 100%;white-space:nowrap;">
             <!-- tab -->
              <view class="tab-nav" style='font-size:12px'>
-               <view class="imgg" wx:for="{{cate}}" wx:key wx:if="{{index<4}}"  bindtap="setTab" data-tabindex="{{index}}" style="min-width:{{150/tabnum}}%;max-width:20%;text-align:center;height: 180rpx;{{index>4?'border-bottom: 1rpx dotted #ddd;':''}}">
+               <view class="imgg" wx:for="{{cate}}" wx:key="key" wx:if="{{index<4}}"  bindtap="setTab" data-tabindex="{{index}}" style="min-width:{{150/tabnum}}%;max-width:20%;text-align:center;height: 180rpx;{{index>4?'border-bottom: 1rpx dotted #ddd;':''}}">
                  <view class="biao" style="margin-right:25rpx;background-image:url('{{item.image}}');">
                      <text>{{item.catename}}</text>
                  </view>
@@ -38,7 +38,7 @@
                                     <text>{{item.username}}</text>
                                     <text style="font-size: 24rpx;color: darkgrey;font-weight: 600;">{{tools.subbb(item.data)}}</text>
                                 </view>
-                                <view class="guanzhu">
+                                <view class="guanzhu" wx:if="true">
                                     <text>关注</text>
                                 </view>
                             </view>
@@ -47,7 +47,7 @@
                                 <text style="font-weight: 600;color: #8B4500;">{{item.catename}}</text>
                             </view>
                             <text  class="conte">{{item.content}}</text>
-                            <image style="width: 96%;height: 350rpx;margin-top: 25rpx;margin-left: 2%;border-radius: 20rpx;" src="{{item.pic}}"></image>
+                            <image style="width: 96%;height: 350rpx;margin-top: 25rpx;margin-left: 2%;border-radius: 20rpx;" data-img="{{item.pic}}" bindtap='previewImg' src="{{item.pic}}"></image>
                             <view class="opera">
                                 <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
                                 <text>{{item.zan}}</text>
@@ -96,6 +96,11 @@
         </view>
     </view> 
 
+    <!-- 发表文章按钮 -->
+    <view class="logo" bindtap="fabiao">
+        <image src="/images/add.png"></image>
+        <view class="logo_ground"></view>
+    </view>
 
 
 </view>

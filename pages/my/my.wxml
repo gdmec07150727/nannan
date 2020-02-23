@@ -2,10 +2,14 @@
 <view class="con">
     <view class="head">
         <view class="card">
+                <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="info">点击授权</button>
+                <block wx:else>
                 <image class="img_user" src="{{avatarUrl}}" mode="cover"></image>
                 <text class="name_user">{{nickName}}</text>
+                <text class="name_user">{{wopenid}}</text>
                 <text class="show">{{follow_num}} 关注 | {{follow_pass}} 被关注</text>
                 <text class="show"></text>
+                </block>
         </view>
         <button open-type="share" class="share">分享名片</button>
     </view>
@@ -42,7 +46,7 @@
                 </view>
                 <text>{{item.content}}
                 </text>
-                <image src="{{item.pic}}"></image>
+                <image data-img="{{item.pic}}" bindtap='previewImg' src="{{item.pic}}"></image>
                 <view class="opera">
                     <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
                     <text>{{item.zan}}</text>

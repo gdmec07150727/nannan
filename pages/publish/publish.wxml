@@ -1,0 +1,36 @@
+<view class="con">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="lab a" bindtap="actionSheetTap">
+            <image src="../../images/lab.png"></image>
+            <text>{{lab}}</text>
+        </view>
+        <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+            <block wx:for-items="{{actionSheetItems}}">
+            <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+            </block>
+            <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+        </action-sheet>
+        <view class="txt">
+            <textarea class="textarea" placeholder="今天心情如何....." placeholder-class="placeholder" maxlength="-1"
+            focus="true" auto-height="true" bindblur='bindTextAreaBlur' focus="{{focus}}"></textarea>
+        </view>
+        <view class="img">
+            <image bindtap='upimg' class='tu' src="../../images/camera.png"></image>
+            <block wx:for="{{img_arr}}" wx:key="index">    
+                <view class='logoinfo'>      
+                  <image class='logoinfo' mode="aspectFill" src='{{item}}' data-index="{{index}}" bindtap="previewImg" bindlongpress="deleteImg" name="headimage" ></image>      
+                </view>   
+            </block>
+        </view>
+        <view class="sub">
+            <view class="subl" >
+                <image src="../../images/ice.png"></image>
+                <text>公开</text>
+            </view>
+            <view class="subr">
+                
+                <button form-type="submit" class='an'>发布</button>
+            </view>
+        </view>
+    </form>
+</view>

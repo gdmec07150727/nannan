@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://127.0.01/nannan/public/detail?id='+options.id,
+      url: 'http://127.0.0.1/nannan/public/detail?id='+options.id,
       data: {},
       method: 'GET', 
       success: function(res){

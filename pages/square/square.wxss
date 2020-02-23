@@ -90,7 +90,7 @@
      height: 80%;
      background-size: 100%;
      border-radius: 20rpx;
-     filter:blur(0.1px)
+     
    }
    .biao text{
      color: white;
@@ -199,4 +199,19 @@
     color: #525252;
     font-weight: 700;
     line-height: 40rpx;
+}
+
+/* 发表文章 */
+.logo{
+  width: 100%;
+  display: flex;
+  bottom: 0px;
+  position: fixed;
+  justify-content: flex-end;
+}
+.logo image{
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 50rpx;
+  margin-bottom: 50rpx;
 }

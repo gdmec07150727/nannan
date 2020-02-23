@@ -1,0 +1,97 @@
+.con{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lab{
+    width: 235rpx;
+    height: 60rpx;
+    background-color: #EEE9E9;
+    display: flex;
+    flex-direction: row;
+    border-radius: 40rpx;
+    margin-left: 5%;
+    margin-top: 15rpx;
+}
+.lab image{
+    width: 60rpx;
+    height: 60rpx;
+}
+.lab text{
+    font-size: 29rpx;
+    color: #B8860B;
+    font-family: SimHei;
+    line-height: 60rpx;
+}
+.txt{
+    width: 90%;
+    height: 300rpx;
+    background-color: #EEE9E9;
+    border-radius: 10rpx;
+    margin-left: 5%;
+    margin-top: 30rpx;
+}
+.textarea{
+    margin: 30rpx;
+    font-size: 28rpx;
+    width: 80%;
+    height: 100%;
+}
+.img{
+    width: 90%;
+    margin-left: 5%;
+    height: 110rpx;
+    margin-top: 35rpx;
+}
+.img image{
+    width: 110rpx;
+    height: 110rpx;
+}
+.sub{
+    width: 90%;
+    height: 100rpx;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.subl{
+    width: 150rpx;
+    height: 55rpx;
+    border-radius: 30rpx;
+    background-color: #EEE9E9;
+    text-align: center;
+    
+}
+.subl image{
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 3%;    
+}
+.subl text{
+    font-size: 30rpx;
+    color: #B8860B;
+    line-height: 55rpx;
+    font-family: SimHei;
+}
+.subr{
+    width: 120rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    background-color:#FF6347;
+    text-align: center;
+    float: right;
+}
+.subr button{
+    font-size: 32rpx;
+    color: white;
+    line-height: 60rpx;
+    font-family: SimHei;
+    width: 120rpx;
+    height: 60rpx;
+    background-color:#FF6347;
+}
+.logoinfo{
+    margin-top: 30rpx;
+}

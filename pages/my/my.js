@@ -6,12 +6,12 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
+  
   onLoad:function(){
       //以下获取当前的头像昵称
     var that = this;
-    var nickName = that.data.nickName;
-    var avatarUrl = that.data.avatarUrl;
     var db = "no";
+    //console.log(that.data.openid)
     //获取用户信息
     wx.getUserInfo({
         success: function(res){
@@ -20,36 +20,14 @@ Page({
             that.setData({
                 nickName:that.data.nickName,
                 avatarUrl:that.data.avatarUrl,
+                hasUserInfo:true
             }),
             that.setData({
                 db:'ok'
             })
             if(db = "ok"){
                 var name,url;
-                wx.request({
-                    url: 'http://127.0.0.1/nannan/public/user',
-                    header: {
-                        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-                       },
-                    data: {
-                        username : res.userInfo.nickName,
-                        userimg : res.userInfo.avatarUrl
-                    },
-                    method: 'GET', 
-                    success: function(res){
-                      console.log(res.data[0])
-                       that.setData({
-                           article:res.data
-                       })
-                       
-                    },
-                    fail: function() {
-                        console.log("fail")
-                    },
-                    complete: function() {
-                        // complete
-                    }
-                })
+                that.getInfo()
             }
             //获取关注数
             wx.request({
@@ -102,7 +80,76 @@ Page({
     
 
   },
+  //获取用户的信息(获取权限)
+  info: function () {
+    var that = this
+    that.getInfo()
+    that.onLoad()
+  },
+  //获取openid和用户基本信息
+  getInfo:function(){
+    var that = this
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res.userInfo)
+        var city = res.userInfo.city
+        var country = res.userInfo.country
+        var nickName = res.userInfo.nickName
+        var province = res.userInfo.province
+        var avatarUrl = res.userInfo.avatarUrl
+        that.setData({
+          city: city,
+          country: country,
+          nickName: nickName,
+          province: province,
+          hasUserInfo: true
+        })
+        wx.login({
+          success: function (res) {
+            //console.log(res.code)
+            //发送请求
+            wx.request({
+              url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+              data: {
+                code: res.code
+              },
+              method: 'GET', 
+              header: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+              },
+              success(res) {
+                //console.log(res.data)
+                that.setData({
+                  openid: res.data
+                })
+                wx.request({
+                  url: 'http://127.0.0.1/nannan/public/user',
+                  header: {
+                      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+                     },
+                  data: {
+                      username : nickName,
+                      userimg : avatarUrl,
+                      openid : res.data
+                  },
+                  method: 'GET', 
+                  success: function(res){
+                    //console.log(res.data[0])
+                     that.setData({
+                         article:res.data
+                     })
+                  },
+              })
 
+              }
+            })
+            
+            
+          }
+        })
+      }
+    })
+  },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
         console.log(res)
@@ -120,6 +167,11 @@ Page({
     wx.navigateTo({
         //url: '/pages/pesonal/pesonal',
       })
+  },
+  previewImg(e){
+    wx.previewImage({
+      urls: [e.currentTarget.dataset.img],
+    })
   }
 
   
