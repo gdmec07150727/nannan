@@ -29,46 +29,66 @@ Page({
                 var name,url;
                 that.getInfo()
             }
-            //获取关注数
-            wx.request({
-                url: 'http://127.0.0.1/nannan/public/follow_num',
-                header: {
+            wx.login({
+              success: function (res) {
+                //console.log(res.code)
+                //发送请求
+                wx.request({
+                  url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+                  data: {
+                    code: res.code
+                  },
+                  method: 'GET', 
+                  header: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                   },
-                data: {
-                    username : res.userInfo.nickName,
-                  },
-                method: 'GET', 
-                success: function(res){
-                    that.setData({
-                        follow_num:res.data.length
-                    })
-                },
-                fail: function() {
-                },
-                complete: function() {
-                }
+                  success(res) {
+                    //获取关注数
+                    wx.request({
+                      url: 'http://127.0.0.1/nannan/public/follow_num',
+                      header: {
+                          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+                        },
+                      data: {
+                          openid : res.data,
+                        },
+                      method: 'GET', 
+                      success: function(res){
+                        console.log(res)
+                          that.setData({
+                              follow_num:res.data.length
+                          })
+                      },
+                      fail: function() {
+                      },
+                      complete: function() {
+                      }
+                  })
+                  //获取被关注数
+                  wx.request({
+                      url: 'http://127.0.0.1/nannan/public/follow_pass',
+                      header: {
+                          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+                        },
+                      data: {
+                          openid : res.data,
+                        },
+                      method: 'GET', 
+                      success: function(res){
+                          that.setData({
+                              follow_pass:res.data.length
+                          })
+                      },
+                      fail: function() {
+                      },
+                      complete: function() {
+                      }
+                  })
+                  }
+                })
+              }
             })
-            //获取被关注数
-            wx.request({
-                url: 'http://127.0.0.1/nannan/public/follow_pass',
-                header: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-                  },
-                data: {
-                    username : res.userInfo.nickName,
-                  },
-                method: 'GET', 
-                success: function(res){
-                    that.setData({
-                        follow_pass:res.data.length
-                    })
-                },
-                fail: function() {
-                },
-                complete: function() {
-                }
-            })
+            
         },
         fail: function(res) {
             
@@ -134,7 +154,7 @@ Page({
                   },
                   method: 'GET', 
                   success: function(res){
-                    //console.log(res.data[0])
+                    console.log(res.data)
                      that.setData({
                          article:res.data
                      })
@@ -165,12 +185,28 @@ Page({
   },
   user_xin:function(res){
     wx.navigateTo({
-        //url: '/pages/pesonal/pesonal',
+        url: '/pages/pesonal/pesonal',
       })
   },
   previewImg(e){
     wx.previewImage({
       urls: [e.currentTarget.dataset.img],
+    })
+  },
+  arti:function(event){
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/article/article?id='+id,
+      success: function(res){
+        // success
+        //console.log(id)
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
     })
   }
 

@@ -1,0 +1,228 @@
+.con{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEE9E9;
+}
+/* 文章内容 */
+.article{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+  }
+  
+  .left{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left image{
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+    margin-top: 20rpx;
+  }
+  .right{
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+  }
+  .hea{
+    width: 100%;
+    height: 110rpx;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20rpx;
+    justify-content: space-around;
+  }
+  .author{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: Microsoft YaHei;
+    font-size: 30rpx;
+  }
+  .guanzhu{
+    width: 18%;
+    height: 40rpx;
+    border: solid;
+    text-align: center;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    margin-top: 25rpx;
+    margin-right: 12rpx;
+    border-radius: 50rpx;
+    color: #E19E9E;
+  }
+  .labe{
+    width: 165rpx;
+    height: 42rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#CFCFCF ;
+    border-radius: 200rpx;
+    text-align: center;
+    opacity: 0.6;
+    margin-top: 15rpx;
+  }
+  .labe text{
+    line-height: 42rpx;
+    margin-left: -16rpx;
+    font-size: 26rpx;
+  }
+  .labe image{
+    margin-top: -2rpx;
+  }
+  .conte{
+    width: 95%;
+    margin-top: 15rpx;
+    font-family: SimSun;
+    font-size: 29rpx;
+    line-height: 48rpx;
+    font-weight: 700;
+    color: #525252;
+  }
+  .dibu{
+    width: 100%;
+    height: 30rpx;
+  }
+  .opera{
+    width: 200rpx;
+    height: 40rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15rpx;
+  }
+  .opera text{
+      font-family: SimSun;
+      font-size: 28rpx;
+      color: #525252;
+      font-weight: 700;
+      line-height: 40rpx;
+  }
+
+/* 评论内容 */
+.commen{
+    width: 100%;
+    height: 100%;
+    margin-top: 15rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 120rpx;
+}
+.top{
+    width: 100%;
+    height: 70rpx;
+    font-family: SimSun;
+    font-size: 29rpx;
+    margin: 20rpx;
+    font-weight: 700;
+    line-height: 70rpx;
+}
+.xia{
+    width: 85rpx;
+    height: 5rpx;
+    background-color: tomato;
+}
+.botom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 45rpx;
+}
+.img{
+    width: 50%;
+    height: 65rpx;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left:20rpx;
+    
+    line-height: 50rpx;
+}
+.img image{
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+.img text{
+    font-family: SimSun;
+    font-size: 29rpx;
+    font-weight: 700;
+}
+.conton{
+    width: 85%;
+    height: 100%;
+    margin-left: 95rpx;
+}
+.conton text{
+    font-family: SimSun;
+    font-size: 29rpx;
+    font-weight: 500;
+    text-align-last: justify;
+}
+
+
+
+/*模态框*/
+.modals{position:fixed; z-index: 999; top:0; left: 0; right:0; bottom: 0;}
+.modals-cancel{position:absolute; z-index:1000; top:0; left: 0; right:0; bottom: 0; background-color: rgba(0,0,0,.5);}
+.bottom-dialog-body{position:absolute; z-index:10001; bottom:0; left:0; right:0; padding:30rpx; height:340rpx; background-color: #fff;}
+/*动画前初始位置*/
+.bottom-pos{-webkit-transform:translateY(100%);transform:translateY(100%);}
+.com{
+  width: 100%;
+  height: 110rpx;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  bottom: 0rpx;
+  position: fixed;
+}
+.comm{
+  width: 96%;
+  height: 65%;
+  background-color: #DCDCDC;
+  border-radius: 40rpx;
+  margin-top: 10rpx;
+}
+.comm text{
+  margin: 40rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #8B8682;
+}
+/* 打开后的 */
+.cont{
+  width: 98%;
+  height: 270rpx;
+  background-color: #DCDCDC;
+  border-radius: 10rpx;
+}
+.cont textarea{
+  margin: 20rpx;
+  margin-top: 10rpx;
+}
+.btnn{
+  width: 120rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: white;
+  border-radius: 20rpx;
+  border: 0;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  background-color: #FF7256;
+}
+.btnn::after{
+  border: 0;
+}

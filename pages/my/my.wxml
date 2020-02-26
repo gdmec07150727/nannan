@@ -34,7 +34,7 @@
         </view>
         <text class="jilu">(共{{article.length}}条)</text>
         <!--发表内容-->
-        <view class="con_nei" wx:for="{{article}}">
+        <view class="con_nei" wx:for="{{article}}" bindtap="arti" data-id="{{item.id}}">
             <view class="left">
                 <text>{{tools.sub(item.data)}}</text>
                 <text>{{tools.subb(item.data)}}</text>
@@ -51,7 +51,7 @@
                     <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
                     <text>{{item.zan}}</text>
                     <image style="width: 36rpx;height: 36rpx;" src="/images/comment1.png"></image>
-                    <text>{{item.comment}}</text>
+                    <text>{{item.com}}</text>
                 </view>
             </view>
         </view>

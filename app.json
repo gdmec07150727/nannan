@@ -7,7 +7,7 @@
     "pages/my/my",
     "pages/pesonal/pesonal",
     "pages/news_detail/news_detail",
-    
+    "pages/article/article",
     "pages/logs/logs"
     
   ],

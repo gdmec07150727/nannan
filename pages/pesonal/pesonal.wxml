@@ -3,13 +3,13 @@
         <text>头像</text>
         <view class="pic" bindtap="uploadimg">
             <image style="width: 40rpx;height: 40rpx;float: right;margin-top: 42rpx;margin-left: 30rpx;" src="/images/right.png"></image>
-            <image style="width: 120rpx;height: 120rpx;border-radius: 50%;" src="{{imgPath}}"></image> 
+            <image style="width: 120rpx;height: 120rpx;border-radius: 50%;" src="{{user.userimg}}"></image> 
         </view>
     </view>
     <view class="section">
         <view class="section__title">用户名</view>
         <view style="width: 70%;">
-            <input style="float: right;text-align: right;" name="username" value="{{username}}" />
+            <input style="float: right;text-align: right;" name="username" value="{{user.username}}" />
         </view>
     </view>
     <view class="btn-area">

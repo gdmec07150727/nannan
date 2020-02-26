@@ -3,7 +3,7 @@ Page({
   data: {
     source:'',
     imgPath:null,
-    path:'',
+    userimg:'',
     dizhi:'http://127.0.0.1/nannan/public/static/upload/weixin/'
   },
 
@@ -29,7 +29,7 @@ Page({
               var rrr = JSON.parse(res.data)
               console.log(rrr.replace('\\','/'))
             that.setData({
-                path:rrr.replace('\\','/')
+              userimg:rrr.replace('\\','/')
             })
           }
         })
@@ -46,9 +46,10 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
        },
       data:{
-        'img':that.data.path,
+        'img':that.data.userimg,
         'newname':e.detail.value.username,
-        'username':that.data.nickName
+        'username':that.data.nickName,
+        openid:that.data.openid
       },
       success:function(res){
           console.log(that.data.path)
@@ -56,6 +57,7 @@ Page({
           wx.showToast({
             title: '提交成功'
           })
+          that.onLoad()
         }else{
           wx.showToast({
             title: '提交失败'
@@ -83,30 +85,56 @@ Page({
             that.setData({
                 nickName:that.data.nickName,
             })
-            wx.request({
-                url: 'http://127.0.0.1/nannan/public/user_lst',
-                header: {
-                  'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
-                 },
-                 data:{
-                  'username':that.data.nickName
-                 },
-                method: 'GET', 
-                success: function(res){
-                    console.log(res.data.userimg)
+            wx.login({
+              success: function(res){
+                wx.request({
+                  url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+                  data: {
+                    code: res.code
+                  },
+                  method: 'GET', 
+                  header: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+                  },
+                  success(res) {
+                    //console.log(res.data)
                     that.setData({
-                      username:res.data.username,
-                      imgPath:res.data.userimg,
-                      path:res.data.userimg,
+                      openid:res.data
                     })
-                },
-                fail: function() {
-                    // fail
-                },
-                complete: function() {
-                    // complete
-                }
+                    wx.request({
+                      url: 'http://127.0.0.1/nannan/public/user_lst',
+                      header: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+                       },
+                       data:{
+                        openid:res.data
+                       },
+                      method: 'GET', 
+                      success: function(res){
+                          console.log(res.data)
+                          that.setData({
+                            user:res.data,
+                            userimg:res.data.userimg
+                          })
+                      },
+                      fail: function() {
+                          // fail
+                      },
+                      complete: function() {
+                          // complete
+                      }
+                  })
+                  }
+                })
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
             })
+            
         },
         fail: function() {
         },

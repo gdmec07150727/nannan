@@ -57,6 +57,7 @@ Page({
       },
       method:'GET',
       success:function(res){
+        //console.log(res.data)
         that.setData({  
           article:res.data,
         })
@@ -196,6 +197,22 @@ Page({
       url: '/pages/publish/publish',
       success: function(res){
         // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+  arti:function(event){
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/article/article?id='+id,
+      success: function(res){
+        // success
+        //console.log(id)
       },
       fail: function() {
         // fail

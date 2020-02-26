@@ -1,0 +1,79 @@
+<wxs module="tools" src="../../pages/my/my.wxs"></wxs>
+<view class="con">
+    <!-- 文章内容 -->
+        <view class="article" wx:for="{{detail}}">
+            <view class="left">
+                <image src="{{item.picture}}"></image>
+            </view>
+            <view class="right">
+                <view class="hea">
+                    <view class="author">
+                        <text>{{item.username}}</text>
+                        <text style="font-size: 24rpx;color: darkgrey;font-weight: 600;">{{item.data}}</text>
+                    </view>
+                    <view class="guanzhu" bindtap="guan" wx:if="{{guan=='false'}}">
+                        <text>关注</text>
+                    </view>
+                    <view class="guanzhu" wx:elif="{{guan=='true'}}" bindtap="del" style="width: 20%;">
+                        <text>取消关注</text>
+                    </view>
+                    <view class="guanzhu" wx:elif="{{guan=='0'}}" style="border: none;">
+                        <text></text>
+                    </view>
+                </view>
+                <view class="labe">
+                    <image style="width: 30rpx;height: 30rpx;" src="/images/label.png"></image>
+                    <text style="font-weight: 600;color: #8B4500;">{{item.catename}}</text>
+                </view>
+                <text  class="conte">{{item.content}}</text>
+                <image style="width: 96%;height: 350rpx;margin-top: 25rpx;margin-left: 2%;border-radius: 20rpx;" data-img="{{item.pic}}" bindtap='previewImg' src="{{item.pic}}"></image>
+                <view class="opera">
+                    <image style="width: 36rpx;height: 36rpx;" src="/images/zan.png"></image>
+                    <text>{{item.zan}}</text>
+                    <image style="width: 36rpx;height: 36rpx;"  open-type='share' src="/images/fa.png"></image>
+                </view>
+                <view class="dibu"></view>
+            </view>
+        </view>
+
+    <!-- 评论内容 -->
+        <view class="commen">
+            <view class="top">
+                <text>评论 {{com_num}}</text>
+                <view class="xia"></view>
+            </view>
+            <view class="botom" wx:if="{{a=='true'}}"  wx:for="{{com}}">
+                <view class="img">
+                    <image src="{{item.userimg}}"></image>
+                    <text>{{item.username}}</text>
+                    <text style="font-size: 22rpx;color: #CDC5BF;">{{item.data}}</text>
+                </view>
+                <view class="conton">
+                    <text>{{item.content}}</text>
+                </view>
+            </view>
+            <view class="botom" wx:if="{{com_num<=0}}">
+                <text style="font-size: 29rpx;color: lightgray;margin: 55rpx;">还没有评论哦，快来坐沙发吧~</text>
+            </view>
+        </view>
+        
+        <!-- 发表评论 -->
+        <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+            <view class="modals-cancel" bindtap="hideModal"></view>
+            <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+              <form bindsubmit="formSubmit" bindreset="formReset">
+                <view class="cont">
+                  <textarea class="textarea" placeholder="请输入你想要说的话吧" placeholder-class="placeholder" maxlength="-1"
+                      focus="true" auto-height="true" bindblur='bindTextAreaBlur' cursor-spacing="200" focus="{{focus}}">
+                  </textarea>
+                </view>
+                <button form-type="submit" class="btnn">发送</button>
+              </form>
+            </view>
+        </view>
+        
+        <view class="com" bindtap="showModal">
+          <view class="comm"><text>请输入你想要说的话吧</text></view>
+        </view>
+
+</view>
