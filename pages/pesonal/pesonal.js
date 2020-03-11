@@ -4,7 +4,7 @@ Page({
     source:'',
     imgPath:null,
     userimg:'',
-    dizhi:'http://127.0.0.1/nannan/public/static/upload/weixin/'
+    dizhi:'https://hungking.top/nannan/public/static/upload/weixin/'
   },
 
   uploadimg: function () {
@@ -22,7 +22,7 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'http://127.0.0.1/nannan/public/uploadimg',
+          url: 'https://hungking.top/nannan/public/uploadimg',
           filePath: tempFilePaths[0],
           name: 'file',
           success: function (res) {
@@ -40,7 +40,7 @@ Page({
   formSubmit: function (e) {
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/user_edit',
+      url: 'https://hungking.top/nannan/public/user_edit',
       method:'GET',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -88,7 +88,7 @@ Page({
             wx.login({
               success: function(res){
                 wx.request({
-                  url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+                  url: 'https://hungking.top/nannan/public/aaa', //仅为示例，并非真实的接口地址
                   data: {
                     code: res.code
                   },
@@ -102,7 +102,7 @@ Page({
                       openid:res.data
                     })
                     wx.request({
-                      url: 'http://127.0.0.1/nannan/public/user_lst',
+                      url: 'https://hungking.top/nannan/public/user_lst',
                       header: {
                         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                        },

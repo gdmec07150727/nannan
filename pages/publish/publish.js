@@ -74,7 +74,7 @@ Page({
     var adds = that.data.img_arr;
     for (var i = 0; i < this.data.img_arr.length; i++) {
       wx.uploadFile({
-        url: 'http://127.0.0.1/nannan/public/ara',
+        url: 'https://hungking.top/nannan/public/ara',
         filePath: adds[0],
         name: 'file', 
         header: {
@@ -163,6 +163,13 @@ Page({
       urls: img_arr
     })
   },
+  dianji:function(){
+    wx.showToast({
+      title: '点击了按钮',
+      icon: 'success',    //如果要纯文本，不要icon，将值设为'none'
+      duration: 2000     
+    }) 
+  },
 
 
   /**
@@ -185,7 +192,7 @@ Page({
                 //console.log(res.code)
                 //发送请求
                 wx.request({
-                  url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+                  url: 'https://hungking.top/nannan/public/aaa', //仅为示例，并非真实的接口地址
                   data: {
                     code: res.code
                   },

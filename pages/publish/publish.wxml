@@ -28,8 +28,7 @@
                 <text>公开</text>
             </view>
             <view class="subr">
-                
-                <button form-type="submit" class='an'>发布</button>
+                <button form-type="submit" bindtap="dianji" class='an'>发布</button>
             </view>
         </view>
     </form>

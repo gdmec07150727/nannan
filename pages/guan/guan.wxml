@@ -1,0 +1,14 @@
+<view class="con">
+    <view class="comm guan" wx:for="{{foll}}">
+        <image class="userimg" src="{{item.userimg}}"></image>
+        <view class="name">
+            <text class="fir">你已经关注了</text><text class="fir"  style="color: orange;" decode="{{true}}"> &nbsp;{{item.username}}\n</text>
+            <text class="dat">{{item.data}}</text>
+        </view>
+        
+            <view class="guanzhu">
+                <text>已关注</text>
+            </view>
+        
+    </view>
+</view>

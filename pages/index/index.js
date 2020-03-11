@@ -7,7 +7,7 @@ Page({
   onLoad:function(){
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/news',
+      url: 'https://hungking.top/nannan/public/news',
       method:'GET',
       success:function(res){
         that.setData({

@@ -34,7 +34,7 @@ Page({
                 //console.log(res.code)
                 //发送请求
                 wx.request({
-                  url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+                  url: 'https://hungking.top/nannan/public/aaa', //仅为示例，并非真实的接口地址
                   data: {
                     code: res.code
                   },
@@ -45,7 +45,7 @@ Page({
                   success(res) {
                     //获取关注数
                     wx.request({
-                      url: 'http://127.0.0.1/nannan/public/follow_num',
+                      url: 'https://hungking.top/nannan/public/follow_num',
                       header: {
                           'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                         },
@@ -56,7 +56,7 @@ Page({
                       success: function(res){
                         console.log(res)
                           that.setData({
-                              follow_num:res.data.length
+                              follow_num:res.data.length,
                           })
                       },
                       fail: function() {
@@ -66,7 +66,7 @@ Page({
                   })
                   //获取被关注数
                   wx.request({
-                      url: 'http://127.0.0.1/nannan/public/follow_pass',
+                      url: 'https://hungking.top/nannan/public/follow_pass',
                       header: {
                           'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                         },
@@ -129,7 +129,7 @@ Page({
             //console.log(res.code)
             //发送请求
             wx.request({
-              url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+              url: 'https://hungking.top/nannan/public/aaa', //仅为示例，并非真实的接口地址
               data: {
                 code: res.code
               },
@@ -143,7 +143,7 @@ Page({
                   openid: res.data
                 })
                 wx.request({
-                  url: 'http://127.0.0.1/nannan/public/user',
+                  url: 'https://hungking.top/nannan/public/user',
                   header: {
                       'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                      },
@@ -200,6 +200,48 @@ Page({
       success: function(res){
         // success
         //console.log(id)
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+  info:function(){
+    wx.navigateTo({
+      url: '/pages/info/info',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+  guan:function(){
+    wx.navigateTo({
+      url: '/pages/guan/guan',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+  bei:function(){
+    wx.navigateTo({
+      url: '/pages/bei/bei',
+      success: function(res){
+        // success
       },
       fail: function() {
         // fail

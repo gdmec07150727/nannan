@@ -52,6 +52,16 @@
                     <text>{{item.content}}</text>
                 </view>
             </view>
+            <!-- <view class="botom a" wx:if="{{a=='true'}}">
+                <view class="img">
+                    <image src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIYwT5Qe2QMHJfy2w2s2xbXa21kenhCE7wsl2yeicL5FWGbwy5B40dficeFDibPhKwUiaeHAag4ukU1gw/132"></image>
+                    <text>Hey_大家好</text>
+                    <text style="font-size: 22rpx;color: #CDC5BF;">2020-02-22</text>
+                </view>
+                <view class="conton">
+                    <text>啊大苏打实打实大苏打</text>
+                </view>
+            </view> -->
             <view class="botom" wx:if="{{com_num<=0}}">
                 <text style="font-size: 29rpx;color: lightgray;margin: 55rpx;">还没有评论哦，快来坐沙发吧~</text>
             </view>

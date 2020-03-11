@@ -7,7 +7,12 @@
     <text class="content">
         {{detail.content}}
     </text>
-    <image class="img" src="{{detail.pic}}"></image>
+    <view wx:if="{{detail.pic==0}}">
+    
+    </view>
+    <view wx:else>
+        <image class="img" src="{{detail.pic}}"></image>
+    </view>
     <view style="height: 100rpx;"></view>
     <button open-type="share" class="btn">点击分享文章</button>
 </view>

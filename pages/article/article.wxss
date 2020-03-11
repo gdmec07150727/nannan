@@ -139,14 +139,12 @@
     margin-bottom: 45rpx;
 }
 .img{
-    width: 50%;
+    width: 70%;
     height: 65rpx;
     float: left;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     margin-left:20rpx;
-    
     line-height: 50rpx;
 }
 .img image{
@@ -158,11 +156,12 @@
     font-family: SimSun;
     font-size: 29rpx;
     font-weight: 700;
+    margin-left: 22rpx;
 }
 .conton{
     width: 85%;
     height: 100%;
-    margin-left: 95rpx;
+    margin-left: 105rpx;
 }
 .conton text{
     font-family: SimSun;
@@ -225,4 +224,7 @@
 }
 .btnn::after{
   border: 0;
+}
+.a{
+  margin-left: 80rpx;
 }

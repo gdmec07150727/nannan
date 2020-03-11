@@ -1,15 +1,22 @@
 {
+
+
   "pages": [
     
+    "pages/my/my",
+    "pages/index/index",
     "pages/square/square",
     "pages/publish/publish",
-    "pages/index/index",
-    "pages/my/my",
+    "pages/map/map",
+    "pages/guan/guan",
     "pages/pesonal/pesonal",
     "pages/news_detail/news_detail",
     "pages/article/article",
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/info/info",
+    "pages/bei/bei",
+    "pages/school/school",
+    "pages/calen/calen"
   ],
   "window": {
     "backgroundTextStyle": "light",

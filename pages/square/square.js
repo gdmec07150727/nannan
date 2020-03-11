@@ -37,7 +37,7 @@ Page({
     
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/cate',
+      url: 'https://hungking.top/nannan/public/cate',
       method:'GET',
       success:function(res){
         that.setData({  
@@ -51,7 +51,7 @@ Page({
       }
     }),
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/article',
+      url: 'https://hungking.top/nannan/public/article',
       data:{
         id:that.data.cateid
       },
@@ -75,7 +75,7 @@ Page({
             //console.log(res.code)
             //发送请求
             wx.request({
-              url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+              url: 'https://hungking.top/nannan/public/aaa', //仅为示例，并非真实的接口地址
               data: {
                 code: res.code
               },
@@ -86,7 +86,7 @@ Page({
               success(res) {
                 //console.log(res.data)
                 wx.request({
-                  url: 'http://127.0.0.1/nannan/public/follow',
+                  url: 'https://hungking.top/nannan/public/follow',
                   header: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
                   },
@@ -129,7 +129,7 @@ Page({
     const edata = e.currentTarget.dataset;
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/article',
+      url: 'https://hungking.top/nannan/public/article',
       data: {
         id:e.currentTarget.dataset.tabindex
       },
@@ -171,7 +171,7 @@ Page({
             console.log(res.code)
             //发送请求
             wx.request({
-              url: 'http://127.0.0.1/test/json/aaa.php', //仅为示例，并非真实的接口地址
+              url: 'https://hungking.top/test/json/aaa.php', //仅为示例，并非真实的接口地址
               data: {
                 code: res.code
               },

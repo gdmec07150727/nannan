@@ -7,7 +7,8 @@ Page({
     guan:'false',
     hideModal: true, //模态框的状态  true-隐藏  false-显示
     animationData: {},//
-    a:'true'
+    a:'true',
+    img:''
   },
 
   /**
@@ -16,13 +17,14 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/arti_det?id='+options.id,
+      url: 'https://hungking.top/nannan/public/arti_det?id='+options.id,
       data: {},
       method: 'GET', 
       success: function(res){
-        console.log(res.data[0].openid)
+        console.log(res.data[0].pic)
         that.setData({
-          detail:res.data
+          detail:res.data,
+          //img:res.data[0].pic
         })
       },
       fail: function() {
@@ -35,7 +37,7 @@ Page({
     wx.login({
       success: function (res) {
         wx.request({
-          url: 'http://127.0.0.1/nannan/public/aaa', //仅为示例，并非真实的接口地址
+          url: 'https://hungking.top/nannan/public/aaa', //仅为示例，并非真实的接口地址
           data: {
             code: res.code
           },
@@ -48,7 +50,7 @@ Page({
               openid:res.data
             })
             wx.request({
-              url: 'http://127.0.0.1/nannan/public/guan',
+              url: 'https://hungking.top/nannan/public/guan',
               data: {
                 openid:res.data,
                 id:options.id
@@ -72,7 +74,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/comm',
+      url: 'https://hungking.top/nannan/public/comm',
       data: {
         art_id:options.id
       },
@@ -95,7 +97,7 @@ Page({
   guan:function(){
     var that = this
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/follow_add',
+      url: 'https://hungking.top/nannan/public/follow_add',
       data: {
         uopenid:that.data.openid,
         fopenid:that.data.detail[0].openid
@@ -118,7 +120,7 @@ Page({
   del:function(){
     var that = this
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/follow_del',
+      url: 'https://hungking.top/nannan/public/follow_del',
       data: {
         fopenid:that.data.detail[0].openid
       },
@@ -193,9 +195,10 @@ Page({
   formSubmit:function(){
     var that = this
     wx.request({
-      url: 'http://127.0.0.1/nannan/public/com_add',
+      url: 'https://hungking.top/nannan/public/com_add',
       data: {
         art_id:that.data.detail[0].id,
+        art_openid:that.data.detail[0].openid,
         uopenid:that.data.openid,
         content:that.data.concent
       },
@@ -213,6 +216,14 @@ Page({
       }
     })
   },
+  // previewImg: function (e) {
+  //   var index = e.currentTarget.dataset.index;
+  //   var img_arr = this.data.img_arr;
+  //   wx.previewImage({
+  //     current: img,
+  //     urls: img
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

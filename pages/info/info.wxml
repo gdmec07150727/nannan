@@ -1,0 +1,33 @@
+<view class="con">
+    <view class="comm" wx:for="{{comm}}" bindtap="arti" data-id="{{item.art_id}}">
+        <image class="userimg" src="{{item.userimg}}"></image>
+        <view class="name">
+            <text class="fir" style="color: orange;">{{item.username}}</text><text class="fir" decode="{{true}}"> &nbsp;评论了你的消息\n</text>
+            <text class="dat">{{item.data}}</text>
+        </view>
+        <image class="new" src="{{item.pic}}"></image>
+    </view>
+    <view class="comm dianzan">
+        <image class="userimg" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIYwT5Qe2QMHJfy2w2s2xbXa21kenhCE7wsl2yeicL5FWGbwy5B40dficeFDibPhKwUiaeHAag4ukU1gw/132"></image>
+        <view class="name">
+            <text class="fir" style="color: orange;">Hey~佛雷德</text><text class="fir" decode="{{true}}"> &nbsp;点赞了你的消息哦~\n</text>
+            <text class="dat">2020-02-01</text>
+        </view>
+        <image class="new" src="https://hungking.top/nannan/public/static/images/news2.jpg"></image>
+    </view>
+    <view class="comm guan">
+        <image class="userimg" src="https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIYwT5Qe2QMHJfy2w2s2xbXa21kenhCE7wsl2yeicL5FWGbwy5B40dficeFDibPhKwUiaeHAag4ukU1gw/132"></image>
+        <view class="name">
+            <text class="fir" style="color: orange;">Hey~佛雷德</text><text class="fir" decode="{{true}}"> &nbsp;关注你了哦~\n</text>
+            <text class="dat">2020-02-01</text>
+        </view>
+        
+            <view class="guanzhu" bindtap="guan" wx:if="{{guan=='false'}}">
+                <text>关注</text>
+            </view>
+            <view class="guanzhu" wx:elif="{{guan=='true'}}" bindtap="del" style="width: 20%;">
+                <text>取消关注</text>
+            </view>
+        
+    </view>
+</view>

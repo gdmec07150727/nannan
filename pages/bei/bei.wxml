@@ -1,0 +1,17 @@
+<view class="con">
+    <view class="comm guan" wx:for="{{foll}}">
+        <image class="userimg" src="{{item.userimg}}"></image>
+        <view class="name">
+            <text class="fir"  style="color: orange;">{{item.username}}</text><text class="fir" decode="{{true}}"> &nbsp;已经关注了你哦~\n</text>
+            <text class="dat">{{item.data}}</text>
+        </view>
+        
+            <view class="guanzhu" bindtap="guan" wx:if="{{item.isg=='false'}}">
+                <text>关注</text>
+            </view>
+            <view class="guanzhu" wx:elif="{{item.isg=='true'}}" bindtap="del" style="width: 20%;">
+                <text>互相关注</text>
+            </view>
+        
+    </view>
+</view>
